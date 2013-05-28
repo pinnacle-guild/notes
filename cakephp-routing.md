@@ -11,3 +11,16 @@ Router::connect(
 ```
 
 `/users/nathadir/profile` should map to `UsersController::display()`, where we are provided the parameters `['view' => 'profile', 'user_slug' => 'nathadir']`, and where both `view` and satisfies the regular expression pattern `[a-z]+`, while `user_slug` satisfies whatever regular expression pattern fits the slug output (assuming this is a method available on the `String` class).
+```php
+Router::connect(
+    '/users/:name_slug/:view',
+    [
+        'controller' => 'users',
+        'action' => 'display'
+    ],
+    [
+        'name_slug' => '[a-z]+',
+        'view' => '[a-z]+'
+    ]
+);
+```
