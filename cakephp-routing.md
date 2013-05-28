@@ -9,3 +9,5 @@ Router::connect(
     ['page_slug' => '[a-z]+']
 );
 ```
+
+`/users/nathadir/profile` should map to `UsersController::display()`, where we are provided the parameters `['view' => 'profile', 'user_slug' => 'nathadir']`, and where both `view` and satisfies the regular expression pattern `[a-z]+`, while `user_slug` satisfies whatever regular expression pattern fits the slug output (assuming this is a method available on the `String` class).
