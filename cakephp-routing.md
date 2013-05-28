@@ -1,12 +1,29 @@
 ## Routing
-We want to map the following URL patterns in a special manner:
+We want to map the following URL patterns in a special manner.
 
-`/:page_slug` should map to `PagesController::display('page_slug')`, where `page_slug` fits the regular expression pattern `[a-z]+`. This *should* be achieved by the following routing:
+Map default to the news page.
+```php
+Router::connect(
+    '/',
+    [
+        'controller' => 'pages',
+        'action'     => 'display',
+        'news'
+    ]
+);
+```
+
+`/:page_slug` should map to `PagesController::display()`, where `page_slug` fits the regular expression pattern `[a-z]+`. Additionally, using this URL pattern, we should be able to access the `page_slug` argument through `$this->request->params` in the `PagesController`.
 ```php
 Router::connect(
     '/:page_slug',
-    ['controller' => 'pages', 'action' => 'display'],
-    ['page_slug' => '[a-z]+']
+    [
+        'controller' => 'pages',
+        'action'     => 'display'
+    ],
+    [
+        'page_slug' => '[a-z]+'
+    ]
 );
 ```
 
@@ -16,11 +33,11 @@ Router::connect(
     '/users/:name_slug/:view',
     [
         'controller' => 'users',
-        'action' => 'display'
+        'action'     => 'display'
     ],
     [
         'name_slug' => '[a-z]+',
-        'view' => '[a-z]+'
+        'view'      => '[a-z]+'
     ]
 );
 ```
