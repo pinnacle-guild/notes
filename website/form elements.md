@@ -1,4 +1,4 @@
-### Form elements
+# Form elements
 Features, design, functionality and considerations for form elements.
 
 ## Select/textbox
@@ -12,3 +12,9 @@ Will there be any text fields _without_ support for this? Perhaps e-mail form fo
 
 ## Input
 
+# password
+When entering text in a `password` type field, we want a delay in changing the last entered character to be turned into a (dot) or (asterisk). This will most likely mean having to use a custom tag for typing the field to password.
+This should include feature detection, so that the field is reverted to `type="password"` if the features we are using are not supported.
+
+# placeholder
+We want to use the HTML5 `placeholder` attribute - but feature detection should be used, and if not supported by the browser we should use jQuery to emulate the behavior. Is Modernizr able to detect this?

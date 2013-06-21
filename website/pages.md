@@ -3,7 +3,7 @@ Proposed features, functionality and considerations for website pages.
 ## User 
 URL: `/user`
 
-# Application
+### Application
 Only accessible when an application has been posted by the user. Commenting disabled when application is locked (accepted/declined).
 Can have three status flags: `accepted`, `declined`, `pending`.
 URL: `user/nathadir/application/`
@@ -26,6 +26,6 @@ Votes should never be displayed to author of application (even if accepted/decli
 * Comment
 * Flag application as accepted/declined/pending
 
-# Profile
+### Profile
 
 * get gear rankings from WoWProgress (?)

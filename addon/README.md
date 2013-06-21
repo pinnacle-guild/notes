@@ -1,27 +1,27 @@
-## Addon / AIR application
+# Addon / AIR application
 Notes regarding proposed addon for viewing/updating data in-game (synching information to/from website in .lua files using AIR app).
 
-# Features
-* Limit use
+## Features
+* *Limit use*
     * Should limit use to trialists/raiders/officers?
-* Versioning
+* *Versioning*
     * Update addon automatically (via AIR app)
         * Addon code hosted on website
     * Always require latest version
         * Communicate with other raiders (via ADDON channel) on login
         * Disable (deprecated) features if newer version available - will avoid conflicts when sync
-* Calendar
+* *Calendar*
     * Update calendar to reflect website
     * Notification of raids (needed?)
         * Should be available both in and out of game (addon / AIR app)
         * Should be customizable
-* Raid roster
+* *Raid roster*
     * Addon should load guild roster on login - save information
     * Any conflicts (due to differences in rosters) should be handled on website - give officers/admin notification
-* Items
+* *Items*
     * Save equipped gear per character
     * Save score for each item (if Mr. Robot weights available)
-* Wishlist
+* *Wishlist*
     * Access to wishlist only for characters on user's account (officers cannot view all wishlists from here - information displayed in in-game raidcomp builder)
     * In-game view of wishlist - should have listing per character [can access other char's wishlists from that account] 
         * Remove items from wishlist
@@ -36,12 +36,19 @@ Notes regarding proposed addon for viewing/updating data in-game (synching infor
         * If Journal allows us to hook into it, we can enable adding/removing items to wishlists (for any of the user's characters) from here.
         * If adding/removing items, show confirmation dialog
         * Show indication in Journal interface if item is in wishlist (show which character's wishlist - and for which spec)
-* Character optimization
+* *Character optimization*
     * Monitor currency information
         * Is the player getting VP for upgrades [when those are listed as available from officer-part of site]?
         * Is player getting bonus roll coins [only check when char does not have all items from wishlist]
         * This information should be viewable on user's profile page, and for officers [on 'performance' part of officer page]
+* Guild bank
+    * Should integrate with guild bank, saving whatever is in the bank
+    * Keep track of cash-flow
+        * Whenever character withdraws gold from bank, should be saved
+* Tradeskills
+    * Fetch auction data from any auction addon to calculate prices for mats (and cumulative price for stuff like feasts)
+    * Require a recognized auction addon for this module to work
         
-# Design
+## Design
 The AIR app should mirror the design of the website (mimicking the mock-ups released of the Battle.net Launcher).
-The in-game addon should (if possible) look like the AIR app.
+The in-game addon should (if possible) look like the AIR battle.net launcher mock-ups, with sidebar (icons+text underneath) to select categories (Settings, Calendar, etc.).
